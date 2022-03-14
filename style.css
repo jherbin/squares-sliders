@@ -1,0 +1,45 @@
+#figure1 {
+  background-color: aliceblue;
+  height: 500px;
+  width: 500px;
+  position: relative;
+  text-align: center;
+}
+
+#figure2 {
+  background-color: red;
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  bottom: 25%;
+  left: 25%;
+  opacity: 50%;
+  text-align: center;
+}
+
+#figure1Icon {
+  background-color: aliceblue;
+  height: 50px;
+  width: 50px;
+}
+
+#figure1Icon:hover {
+  background-color: rgb(193, 209, 223);
+}
+
+#figure2Icon {
+  background-color: red;
+  height: 50px;
+  width: 50px;
+  opacity: 50%;
+}
+
+#figure2Icon:hover {
+  background-color: rgb(167, 11, 11);
+}
+
+input {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
