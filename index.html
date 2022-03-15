@@ -5,20 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
     <title>CSS units</title>
 </head>
 <body>
     <header>Units cheat sheet</header>
     <form>
-        <label for="figureSelector1"><div id="figure1Icon"></div></label>
-        <input name ="figureSelector" id="figureSelector1" type="radio">
-        <label for="figureSelector2"><div id="figure2Icon"></div></label>
-        <input name ="figureSelector" id="figureSelector2" type="radio">
+        <label for="figureSelector1">
+            <input name ="figureSelector" id="figureSelector1" type="radio">
+            <div onclick="figureSelection()" id="figure1Icon"></div>
+        </label>
+        <label for="figureSelector2">
+            <input name ="figureSelector" id="figureSelector2" type="radio" checked >
+            <div onclick="figureSelection()" id="figure2Icon"></div>
+        </label>
+    </form>
+    <form id="size1">
+        <label for="height">Height
+            <input type="range" min="1" max="100" value="50" class="slider" id="height1">
+        </label>
+        <label for="width">Width
+                <input type="range" min="1" max="100" value="50" class="slider" id="width1">
+        </label>
+    </form>
+    <form id="size2">
+        <label for="height">Height2
+            <input type="range" min="1" max="100" value="50" class="slider" id="height2">
+        </label>
+        <label for="width">Width2
+            <input type="range" min="1" max="100" value="50" class="slider" id="width2">
+        </label>
     </form>
     <div id="figure1">
         <div id="figure2">
         </div>
     </div>
-
+    
 </body>
 </html>

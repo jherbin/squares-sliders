@@ -27,6 +27,16 @@
   background-color: rgb(193, 209, 223);
 }
 
+input:checked + #figure1Icon {
+  background-color: rgb(193, 209, 223);
+  border: 1px black solid;
+}
+
+input:checked + #figure2Icon {
+  background-color: rgb(167, 11, 11);
+  border: 1px black solid;
+}
+
 #figure2Icon {
   background-color: red;
   height: 50px;
@@ -42,4 +52,8 @@ input {
   position: fixed;
   opacity: 0;
   pointer-events: none;
+}
+
+label > div {
+  display: inline-block;
 }
