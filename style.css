@@ -1,4 +1,4 @@
-#figure1 {
+#whiteSquare {
   background-color: aliceblue;
   height: 500px;
   width: 500px;
@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-#figure2 {
+#redSquare {
   background-color: red;
   height: 50%;
   width: 50%;
@@ -17,43 +17,46 @@
   text-align: center;
 }
 
-#figure1Icon {
+#whiteIcon {
   background-color: aliceblue;
   height: 50px;
   width: 50px;
 }
 
-#figure1Icon:hover {
+#whiteIcon:hover {
   background-color: rgb(193, 209, 223);
 }
 
-input:checked + #figure1Icon {
+input:checked + #whiteIcon {
   background-color: rgb(193, 209, 223);
   border: 1px black solid;
 }
 
-input:checked + #figure2Icon {
+input:checked + #redIcon {
   background-color: rgb(167, 11, 11);
   border: 1px black solid;
 }
 
-#figure2Icon {
+#redIcon {
   background-color: red;
   height: 50px;
   width: 50px;
   opacity: 50%;
 }
 
-#figure2Icon:hover {
+#redIcon:hover {
   background-color: rgb(167, 11, 11);
 }
 
-input {
-  position: fixed;
-  opacity: 0;
-  pointer-events: none;
+.radio {
+  position: absolute;
+  visibility: hidden;
 }
 
 label > div {
   display: inline-block;
+}
+
+#whiteSize {
+  display: none;
 }

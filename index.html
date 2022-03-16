@@ -11,16 +11,16 @@
 <body>
     <header>Units cheat sheet</header>
     <form>
-        <label for="figureSelector1">
-            <input name ="figureSelector" id="figureSelector1" type="radio">
-            <div onclick="figureSelection()" id="figure1Icon"></div>
+        <label for="whiteSelector">
+            <input name ="squareSelector" id="whiteSelector" class="radio" type="radio">
+            <div onclick="squareSelection(event)" id="whiteIcon"></div>
         </label>
-        <label for="figureSelector2">
-            <input name ="figureSelector" id="figureSelector2" type="radio" checked >
-            <div onclick="figureSelection()" id="figure2Icon"></div>
+        <label for="redSelector">
+            <input name ="squareSelector" id="redSelector" class="radio" type="radio" checked >
+            <div onclick="squareSelection(event)" id="redIcon"></div>
         </label>
     </form>
-    <form id="size1">
+    <form id="whiteSize">
         <label for="height">Height
             <input type="range" min="1" max="100" value="50" class="slider" id="height1">
         </label>
@@ -28,16 +28,18 @@
                 <input type="range" min="1" max="100" value="50" class="slider" id="width1">
         </label>
     </form>
-    <form id="size2">
-        <label for="height">Height2
+    <form id="redSize">
+        <label for="height">
             <input type="range" min="1" max="100" value="50" class="slider" id="height2">
+            <p>Height: <span id="heightCounter"></span></p>
         </label>
-        <label for="width">Width2
+        <label for="width">
             <input type="range" min="1" max="100" value="50" class="slider" id="width2">
+            <p>Width: <span id="widthCounter"></span></p>
         </label>
     </form>
-    <div id="figure1">
-        <div id="figure2">
+    <div id="whiteSquare">
+        <div id="redSquare">
         </div>
     </div>
     
