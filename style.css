@@ -1,20 +1,16 @@
 #whiteSquare {
   background-color: aliceblue;
-  height: 500px;
-  width: 500px;
   position: relative;
-  text-align: center;
 }
 
 #redSquare {
   background-color: red;
-  height: 50%;
-  width: 50%;
   position: absolute;
-  bottom: 25%;
-  left: 25%;
   opacity: 50%;
-  text-align: center;
+}
+
+form {
+  display: inline-block;
 }
 
 #whiteIcon {

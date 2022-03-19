@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
+    
     <title>CSS units</title>
 </head>
 <body>
-    <header>Units cheat sheet</header>
     <form>
         <label for="whiteSelector">
             <input name ="squareSelector" id="whiteSelector" class="radio" type="radio">
@@ -21,27 +20,41 @@
         </label>
     </form>
     <form id="whiteSize">
-        <label for="height">Height
-            <input type="range" min="1" max="100" value="50" class="slider" id="height1">
-        </label>
-        <label for="width">Width
-                <input type="range" min="1" max="100" value="50" class="slider" id="width1">
+        <label for="height">
+            <p>
+                Height: 
+                <input type="range" min="0" max="100" value="50" class="slider" id="whiteHeightSlider" oninput="changeSize(event)">
+                <span id="whiteHeightCounter"></span>
+            </p>
+            </label>
+        <label for="width">
+            <p>
+                Width: 
+                <input type="range" min="0" max="100" value="50" class="slider" id="whiteWidthSlider" oninput="changeSize(event)">
+                <span id="whiteWidthCounter"></span>
+            </p>
         </label>
     </form>
     <form id="redSize">
         <label for="height">
-            <input type="range" min="1" max="100" value="50" class="slider" id="height2">
-            <p>Height: <span id="heightCounter"></span></p>
-        </label>
+            <p>
+                Height: 
+                <input type="range" min="0" class="slider" id="redHeightSlider" oninput="changeSize(event)">
+                <span id="redHeightCounter"></span>
+            </p>
+            </label>
         <label for="width">
-            <input type="range" min="1" max="100" value="50" class="slider" id="width2">
-            <p>Width: <span id="widthCounter"></span></p>
+            <p>
+                Width: 
+                <input type="range" min="0" class="slider" id="redWidthSlider" oninput="changeSize(event)">
+                <span id="redWidthCounter"></span>
+            </p>
         </label>
     </form>
     <div id="whiteSquare">
         <div id="redSquare">
         </div>
     </div>
-    
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
