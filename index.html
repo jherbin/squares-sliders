@@ -23,14 +23,14 @@
         <label for="height">
             <p>
                 Height: 
-                <input type="range" min="0" max="100" value="50" class="slider" id="whiteHeightSlider" oninput="changeSize(event)">
+                <input type="range" min="0" max="100" value="50" class="slider" id="whiteHeightSlider" oninput="slide(event)">
                 <span id="whiteHeightCounter"></span>
             </p>
             </label>
         <label for="width">
             <p>
                 Width: 
-                <input type="range" min="0" max="100" value="50" class="slider" id="whiteWidthSlider" oninput="changeSize(event)">
+                <input type="range" min="0" max="100" value="50" class="slider" id="whiteWidthSlider" oninput="slide(event)">
                 <span id="whiteWidthCounter"></span>
             </p>
         </label>
@@ -39,18 +39,53 @@
         <label for="height">
             <p>
                 Height: 
-                <input type="range" min="0" class="slider" id="redHeightSlider" oninput="changeSize(event)">
+                <input type="range" min="0" class="slider" id="redHeightSlider" oninput="slide(event)">
                 <span id="redHeightCounter"></span>
             </p>
             </label>
         <label for="width">
             <p>
                 Width: 
-                <input type="range" min="0" class="slider" id="redWidthSlider" oninput="changeSize(event)">
+                <input type="range" min="0" class="slider" id="redWidthSlider" oninput="slide(event)">
                 <span id="redWidthCounter"></span>
             </p>
         </label>
     </form>
+
+    <form id="redVertical">
+        <label for="top">
+            <p>
+                Top: 
+                <input type="range" min="0" class="slider" id="redTopSlider" oninput="slide(event)">
+                <span id="redTopCounter"></span>
+            </p>
+        </label>
+        <label for="bottom">
+            <p>
+                Bottom: 
+                <input type="range" min="0" class="slider" id="redBottomSlider" oninput="slide(event)">
+                <span id="redBottomCounter"></span>
+            </p>
+        </label>
+    </form>
+
+    <form id="redHorizontal">
+        <label for="right">
+            <p>
+                Right: 
+                <input type="range" min="0" class="slider" id="redRightSlider" oninput="slide(event)">
+                <span id="redRightCounter"></span>
+            </p>
+        </label>
+        <label for="left">
+            <p>
+                Left: 
+                <input type="range" min="0" class="slider" id="redLeftSlider" oninput="slide(event)">
+                <span id="redLeftCounter"></span>
+            </p>
+        </label>
+    </form>
+
     <div id="whiteSquare">
         <div id="redSquare">
         </div>
