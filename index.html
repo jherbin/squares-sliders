@@ -35,6 +35,9 @@
             </p>
         </label>
     </form>
+    <span id="screenSizeContainer">
+        Your screen size is:
+    </span>
     <form id="redSize">
         <label for="height">
             <p>
@@ -52,32 +55,15 @@
         </label>
     </form>
 
-    <form id="redVertical">
-        <label for="top">
+    <form id="redMove">
+        <label for="redTop">
             <p>
                 Top: 
                 <input type="range" min="0" class="slider" id="redTopSlider" oninput="slide(event)">
                 <span id="redTopCounter"></span>
             </p>
         </label>
-        <label for="bottom">
-            <p>
-                Bottom: 
-                <input type="range" min="0" class="slider" id="redBottomSlider" oninput="slide(event)">
-                <span id="redBottomCounter"></span>
-            </p>
-        </label>
-    </form>
-
-    <form id="redHorizontal">
-        <label for="right">
-            <p>
-                Right: 
-                <input type="range" min="0" class="slider" id="redRightSlider" oninput="slide(event)">
-                <span id="redRightCounter"></span>
-            </p>
-        </label>
-        <label for="left">
+        <label for="redTop">
             <p>
                 Left: 
                 <input type="range" min="0" class="slider" id="redLeftSlider" oninput="slide(event)">

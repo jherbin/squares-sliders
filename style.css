@@ -60,3 +60,7 @@ label > div {
 #whiteSize {
   display: none;
 }
+
+#screenSizeContainer {
+  display: none;
+}

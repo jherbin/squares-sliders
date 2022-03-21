@@ -15,17 +15,12 @@ let whiteSquareMinWidth = redSquareWidth;
 let whiteSquareMinHeight = redSquareHeight;
 
 // random position of red square
-let redTop =
-  Math.random((whiteSquareHeight - redSquareHeight * 6) / 3) *
-  whiteSquareHeight;
-let redBottom = whiteSquareHeight - redSquareHeight - redTop;
-let redLeft =
-  Math.random((whiteSquareWidth - redSquareMaxWidth * 6) / 3) *
-  whiteSquareWidth;
-let redRight = whiteSquareHeight - redSquareMaxWidth - redLeft;
-
-console.log(redTop, redBottom);
-console.log(redLeft, redRight);
+let redTop = Math.floor(
+  Math.random(whiteSquareHeight) * (whiteSquareHeight - redSquareHeight)
+);
+let redLeft = Math.floor(
+  Math.random(whiteSquareWidth) * (whiteSquareHeight - redSquareHeight)
+);
 
 // Setup starting displays for white square
 document.getElementById('whiteSquare').style.width = `${whiteSquareWidth}px`;
@@ -45,12 +40,16 @@ document.getElementById(
   'whiteWidthCounter'
 ).innerHTML = `${whiteSquareWidth}px`;
 
+document.getElementById(
+  'screenSizeContainer'
+).innerHTML = `Your screen maximum size is: ${whiteSquareMaxWidth}px x ${
+  whiteSquareMaxHeight * 0.75
+}px`;
+
 // Setup starting displays for red square
 document.getElementById('redSquare').style.width = `${redSquareWidth}px`;
 document.getElementById('redSquare').style.height = `${redSquareHeight}px`;
 document.getElementById('redSquare').style.top = `${redTop}px`;
-document.getElementById('redSquare').style.bottom = `${redBottom}px`;
-document.getElementById('redSquare').style.right = `${redRight}px`;
 document.getElementById('redSquare').style.left = `${redLeft}px`;
 
 document.getElementById('redWidthSlider').max = redSquareMaxWidth;
@@ -58,8 +57,17 @@ document.getElementById('redHeightSlider').max = redSquareMaxHeight;
 document.getElementById('redWidthSlider').value = redSquareWidth;
 document.getElementById('redHeightSlider').value = redSquareHeight;
 
+document.getElementById('redTopSlider').max =
+  whiteSquareHeight - redSquareHeight;
+document.getElementById('redLeftSlider').max =
+  whiteSquareWidth - redSquareWidth;
+document.getElementById('redTopSlider').value = redTop;
+document.getElementById('redLeftSlider').value = redLeft;
+
 document.getElementById('redHeightCounter').innerHTML = redSquareMaxHeight;
 document.getElementById('redWidthCounter').innerHTML = redSquareMaxWidth;
+document.getElementById('redTopCounter').innerHTML = `${redTop}px`;
+document.getElementById('redLeftCounter').innerHTML = `${redLeft}px`;
 
 document.getElementById('redHeightCounter').innerHTML = `${redSquareHeight}px`;
 document.getElementById('redWidthCounter').innerHTML = `${redSquareWidth}px`;
@@ -69,9 +77,14 @@ function squareSelection(square) {
   if (square.target.id === 'whiteIcon') {
     document.getElementById('whiteSize').style.display = 'inline-block';
     document.getElementById('redSize').style.display = 'none';
+    document.getElementById('redMove').style.display = 'none';
+    document.getElementById('screenSizeContainer').style.display =
+      'inline-block';
   } else if (square.target.id === 'redIcon') {
     document.getElementById('whiteSize').style.display = 'none';
     document.getElementById('redSize').style.display = 'inline-block';
+    document.getElementById('redMove').style.display = 'inline-block';
+    document.getElementById('screenSizeContainer').style.display = 'none';
   }
 }
 
@@ -108,12 +121,26 @@ function slide(slider) {
       'redWidthCounter'
     ).innerHTML = `${redSquareWidth}px`;
     updateSliders();
+  } else if (slider.target.id === 'redTopSlider') {
+    redTop = document.getElementById('redTopSlider').value;
+    document.getElementById('redSquare').style.top = `${redTop}px`;
+    document.getElementById('redTopCounter').innerHTML = `${redTop}px`;
+    updateSliders();
+  } else if (slider.target.id === 'redLeftSlider') {
+    redLeft = document.getElementById('redLeftSlider').value;
+    document.getElementById('redSquare').style.left = `${redLeft}px`;
+    document.getElementById('redLeftCounter').innerHTML = `${redLeft}px`;
+    updateSliders();
   }
 }
 
 function updateSliders() {
-  document.getElementById('redHeightSlider').max = whiteSquareHeight;
-  document.getElementById('redWidthSlider').max = whiteSquareWidth;
+  document.getElementById('redHeightSlider').max = whiteSquareHeight - redTop;
+  document.getElementById('redWidthSlider').max = whiteSquareWidth - redLeft;
   document.getElementById('whiteHeightSlider').min = redSquareHeight;
   document.getElementById('whiteWidthSlider').min = redSquareWidth;
+  document.getElementById('redTopSlider').max =
+    whiteSquareHeight - redSquareHeight;
+  document.getElementById('redLeftSlider').max =
+    whiteSquareWidth - redSquareWidth;
 }
