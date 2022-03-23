@@ -30,8 +30,8 @@ document.getElementById('whiteWidthSlider').max = whiteSquareMaxWidth;
 document.getElementById('whiteHeightSlider').max = whiteSquareMaxHeight;
 document.getElementById('whiteWidthSlider').value = whiteSquareWidth;
 document.getElementById('whiteHeightSlider').value = whiteSquareHeight;
-document.getElementById('whiteWidthSlider').min = redSquareWidth;
-document.getElementById('whiteHeightSlider').min = redSquareHeight;
+document.getElementById('whiteWidthSlider').min = redSquareWidth + redLeft;
+document.getElementById('whiteHeightSlider').min = redSquareHeight + redTop;
 
 document.getElementById(
   'whiteHeightCounter'
@@ -137,8 +137,10 @@ function slide(slider) {
 function updateSliders() {
   document.getElementById('redHeightSlider').max = whiteSquareHeight - redTop;
   document.getElementById('redWidthSlider').max = whiteSquareWidth - redLeft;
-  document.getElementById('whiteHeightSlider').min = redSquareHeight;
-  document.getElementById('whiteWidthSlider').min = redSquareWidth;
+  document.getElementById('whiteHeightSlider').min =
+    Number(redSquareHeight) + Number(redTop);
+  document.getElementById('whiteWidthSlider').min =
+    Number(redSquareWidth) + Number(redLeft);
   document.getElementById('redTopSlider').max =
     whiteSquareHeight - redSquareHeight;
   document.getElementById('redLeftSlider').max =
