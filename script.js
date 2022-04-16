@@ -97,7 +97,6 @@ function slide(slider) {
     document.getElementById(
       'whiteHeightCounter'
     ).innerHTML = `${whiteSquareHeight}px`;
-    updateSliders();
   } else if (slider.target.id === 'whiteWidthSlider') {
     whiteSquareWidth = document.getElementById('whiteWidthSlider').value;
     document.getElementById(
@@ -106,32 +105,28 @@ function slide(slider) {
     document.getElementById(
       'whiteWidthCounter'
     ).innerHTML = `${whiteSquareWidth}px`;
-    updateSliders();
   } else if (slider.target.id === 'redHeightSlider') {
     redSquareHeight = document.getElementById('redHeightSlider').value;
     document.getElementById('redSquare').style.height = `${redSquareHeight}px`;
     document.getElementById(
       'redHeightCounter'
     ).innerHTML = `${redSquareHeight}px`;
-    updateSliders();
   } else if (slider.target.id === 'redWidthSlider') {
     redSquareWidth = document.getElementById('redWidthSlider').value;
     document.getElementById('redSquare').style.width = `${redSquareWidth}px`;
     document.getElementById(
       'redWidthCounter'
     ).innerHTML = `${redSquareWidth}px`;
-    updateSliders();
   } else if (slider.target.id === 'redTopSlider') {
     redTop = document.getElementById('redTopSlider').value;
     document.getElementById('redSquare').style.top = `${redTop}px`;
     document.getElementById('redTopCounter').innerHTML = `${redTop}px`;
-    updateSliders();
   } else if (slider.target.id === 'redLeftSlider') {
     redLeft = document.getElementById('redLeftSlider').value;
     document.getElementById('redSquare').style.left = `${redLeft}px`;
     document.getElementById('redLeftCounter').innerHTML = `${redLeft}px`;
-    updateSliders();
   }
+  updateSliders();
 }
 
 function updateSliders() {
